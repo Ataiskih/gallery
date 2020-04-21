@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Изображения</h2>
+<br>
+<div>
+            {% for url in lst_photoo %}
+                <div>
+                    <img src="{{ url }}">
+                </div>
+                <br>
+            {% endfor %}
+</div>
+{% endblock %}
