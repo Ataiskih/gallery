@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Изображения</h2>
-<br>
-<div>
-            {% for url in lst_photoo %}
-                <div>
-                    <img src="{{ url }}">
-                </div>
+<div class="col-lg-6">
+    {% for image in images  %}
+    <a href="{{ url_for('page', number=loop.index) }}"><h3>{{ image.0 }}</h3>
+       </a>
                 <br>
-            {% endfor %}
+    <div>
+        <img src="{{ image.1 }}">
+    </div>
+                <br>
+    <div>
+        {{ image.2 }}
+    </div>
+            <hr>
+            <br>
+    {% endfor %}
 </div>
 {% endblock %}
